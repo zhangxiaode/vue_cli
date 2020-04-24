@@ -11,8 +11,16 @@
 	},
 	"license":"MIT",
 	"engines": {"node": "0.10.x"},
-	"bugs":{"url":"https://github.com/zhangxiaode","email":"1243019627@qq.com"},
-	"contributors":[{"name":"zxd","email":"1243019627@qq.com"}],
+	"bugs":{
+		"url":"https://github.com/zhangxiaode",
+		"email":"1243019627@qq.com"
+	},
+	"contributors":[
+		{
+			"name":"zxd",
+			"email":"1243019627@qq.com"
+		}
+	],
 	"scripts": {
 		"start": "node index.ts"
 	},
