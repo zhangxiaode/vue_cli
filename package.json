@@ -1,24 +1,29 @@
-
 {
 	"name": "@kk/ui",
 	"version": "0.0.1",
 	"author": "zxd",
 	"description": "vue-ui",
-	"keywords":["node","ts","vue"],
+	"keywords": [
+		"node",
+		"ts",
+		"vue"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://path/to/url"
 	},
-	"license":"MIT",
-	"engines": {"node": "0.10.x"},
-	"bugs":{
-		"url":"https://github.com/zhangxiaode",
-		"email":"1243019627@qq.com"
+	"license": "MIT",
+	"engines": {
+		"node": "0.10.x"
 	},
-	"contributors":[
+	"bugs": {
+		"url": "https://github.com/zhangxiaode",
+		"email": "1243019627@qq.com"
+	},
+	"contributors": [
 		{
-			"name":"zxd",
-			"email":"1243019627@qq.com"
+			"name": "zxd",
+			"email": "1243019627@qq.com"
 		}
 	],
 	"scripts": {
