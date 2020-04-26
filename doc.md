@@ -6,7 +6,13 @@
 
 **用法：**
 ```html
-<guidePage :step.sync="step" :page="page" :location="location" @update:step="updateStep()" @update:isShow="updatePage()" />
+<guidePage 
+	:step.sync="step" 
+	:page="page" 
+	:location="location" 
+	@update:step="updateStep()" 
+	@update:isShow="updatePage()" 
+/>
 ```
 ```javascript
 {
