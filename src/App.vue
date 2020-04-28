@@ -9,10 +9,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
 export default {
   name: "App",
   mounted() {
+    console.log(this)
     // console.log(Vue.$ajax)
     // this.$ajax
     //   .post("/api/linkmcn-common/api/message/getCount", {
