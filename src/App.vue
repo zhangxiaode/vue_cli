@@ -9,22 +9,34 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: "App",
+import { Vue, Component } from 'vue-property-decorator'
+import ajax from '@/utils/ajax'
+
+@Component
+export default class App extends Vue {
   mounted() {
-    console.log(this)
-    // console.log(Vue.$ajax)
-    // this.$ajax
-    //   .post("/api/linkmcn-common/api/message/getCount", {
-    //     messageKind: null,
-    //     state: 0
-    //   })
-    //   .then(res => {
-    //     console.log(res);
-    //   });
-  },
-  methods: {}
-};
+    ajax
+      .post("/apis/post", {
+      })
+      .then(res => {
+        // console.log(res);
+      });
+  }
+}
+
+// import ajax from '@/utils/ajax'
+// export default {
+//   name: "App",
+//   mounted() {
+//     ajax
+//       .post("/apis/post", {
+//       })
+//       .then(res => {
+//         // console.log(res);
+//       });
+//   },
+//   methods: {}
+// };
 </script>
 
 <style lang="scss">
