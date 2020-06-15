@@ -1,14 +1,17 @@
 import Axios, { AxiosInstance } from 'axios'
 import { Message } from 'element-ui'
 class Ajax {
-  private baseUrl: String = '';
-  private instance: AxiosInstance = Axios.create({})
+  private instance: AxiosInstance
   constructor() {
     Axios.defaults.headers = {
       'X-Requested-With': 'XMLHttpRequest',
       'Accept': 'application/json',
       'Content-Type': 'application/json; charset=UTF-8'
     }
+    Axios.defaults.baseURL = '';
+    // 请求超时的时间限制
+    Axios.defaults.timeout = 10000;
+    this.instance = Axios.create()
     this.initAxios()
   }
   private initParams(params:any) {
@@ -20,6 +23,7 @@ class Ajax {
     this.instance.interceptors.request.use((config: any) => {
       // 在发送请求之前做些什么
       // config.headers.Authorization = localStorage.getItem("token")
+      // config.headers.Authorization = "token"
       return config
     }, function (error: any) {
       // 对请求错误做些什么
@@ -52,7 +56,7 @@ class Ajax {
       newParam = { data: this.initParams(params) }
     }
     return new Promise((resolve, reject) => {
-      request(`${this.baseUrl}${url}`, newParam).then((response: any) => {
+      request(`${url}`, newParam).then((response: any) => {
         resolve(response.data)
       }).catch((error: any) => {
         reject(error)

@@ -5,6 +5,8 @@ const resolve = dir => {
 module.exports = {
   chainWebpack: config => {
     config.resolve.alias.set('@', resolve('src'))
+    config.module.rule('images').uses.clear()
+    config.module.rule('images').use('file-loader').loader('file-loader').options({esModule: false,})
   },
   publicPath: './',
   assetsDir: './',

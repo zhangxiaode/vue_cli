@@ -1,10 +1,11 @@
-const baseUrl = './'
+export const baseUrl = './'
 
 const formatNumber = (n: Number) => {
   var num: String = n.toString()
   return num[1] ? num : '0' + num
 }
-const formatDateTime = (date: Date) => {
+
+export function formatDateTime(date: Date) {
   const year: Number = date.getFullYear()
   const month: Number = date.getMonth() + 1
   const day: Number = date.getDate()
@@ -17,5 +18,3 @@ const formatDateTime = (date: Date) => {
     [hour, minute, second].map(formatNumber).join(':')
   )
 }
-
-export { baseUrl, formatDateTime }

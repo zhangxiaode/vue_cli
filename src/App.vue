@@ -3,30 +3,21 @@
     <!-- <div id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view />-->
+    </div>-->
+    <!-- <router-view /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import ajax from '@/utils/ajax'
+import ajax from './utils/ajax'
 
-@Component
-export default class App extends Vue {
-  mounted() {
-    ajax
-      .post("/apis/post", {
-      })
-      .then(res => {
-        // console.log(res);
-      });
-  }
-}
-
-// import ajax from '@/utils/ajax'
-// export default {
-//   name: "App",
+// @Component
+// export default class App extends Vue {
+//   constructor(props) {
+//     super(props)
+//     console.log(321,this)
+//   }
 //   mounted() {
 //     ajax
 //       .post("/apis/post", {
@@ -34,9 +25,21 @@ export default class App extends Vue {
 //       .then(res => {
 //         // console.log(res);
 //       });
-//   },
-//   methods: {}
-// };
+//   }
+// }
+
+export default {
+  name: "App",
+  mounted() {
+    this.$ajax
+      .post("/apis/post", {
+      })
+      .then(res => {
+        // console.log(res);
+      });
+  },
+  methods: {}
+};
 </script>
 
 <style lang="scss">
