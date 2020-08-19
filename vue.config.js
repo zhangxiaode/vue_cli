@@ -4,9 +4,13 @@ const resolve = dir => {
 }
 module.exports = {
   chainWebpack: config => {
+    config.plugin('html').tap(args => {
+      args[0].title= "vue-cli"
+      return args
+    })
     config.resolve.alias.set('@', resolve('src'))
-    config.module.rule('images').uses.clear()
-    config.module.rule('images').use('file-loader').loader('file-loader').options({esModule: false,})
+    // config.module.rule('images').uses.clear()
+    // config.module.rule('images').use('file-loader').loader('file-loader').options({esModule: false,})
   },
   publicPath: './',
   assetsDir: './',
@@ -20,7 +24,7 @@ module.exports = {
     open: false,
     proxy: {
       '/apis': {
-        target: 'http://localhost:9000',
+        target: 'http://localhost:7001',
         ws: false,
         changeOrigin: false
       }

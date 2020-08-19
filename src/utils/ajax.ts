@@ -3,10 +3,13 @@ import { Message } from 'element-ui'
 class Ajax {
   private instance: AxiosInstance
   constructor() {
+    var arr,reg=new RegExp("(^| )"+'csrfToken'+"=([^;]*)(;|$)");
+    arr = document.cookie.match(reg) 
     Axios.defaults.headers = {
       'X-Requested-With': 'XMLHttpRequest',
       'Accept': 'application/json',
-      'Content-Type': 'application/json; charset=UTF-8'
+      'Content-Type': 'application/json; charset=UTF-8',
+      'x-csrf-token': unescape(arr[2])
     }
     Axios.defaults.baseURL = '';
     // 请求超时的时间限制

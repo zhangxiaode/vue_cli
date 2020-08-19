@@ -31,11 +31,58 @@ import ajax from './utils/ajax'
 export default {
   name: "App",
   mounted() {
+    // this.$ajax
+    //   .get("/apis/user", {
+    //     page: 2,
+    //     size: 1
+    //   })
+    //   .then(res => {
+    //     console.log(res);
+    //   });
+    // this.$ajax
+    //   .get("/apis/user/34", {
+    //   })
+    //   .then(res => {
+    //     console.log(res);
+    //   });
+    // this.$ajax
+    //   .post("/apis/user", {
+    //     openid: 'ovp_i5CmjrrthTzpGlLnlHdB323p',
+    //     nickname: '111',
+    //     avatarurl: '111',
+    //     gender: 1,
+    //     country: '111',
+    //     province: '111',
+    //     city: '111',
+    //     language: '111',
+    //     unionid: '1111'
+    //   })
+    //   .then(res => {
+    //     console.log(res);
+    //   });
+    
+    // this.$ajax
+    //   .put("/apis/user", {
+    //     id: 40,
+    //     openid: 'ovp_i5CmjrrthTzpGlLnlHdBZ3ls',
+    //     nickname: 'zxd',
+    //     avatarurl: '111',
+    //     gender: 1,
+    //     country: '111',
+    //     province: '111',
+    //     city: '111',
+    //     language: '111',
+    //     unionid: '1111'
+    //   })
+    //   .then(res => {
+    //     console.log(res);
+    //   });
+
     this.$ajax
-      .post("/apis/post", {
+      .delete("/apis/user/40", {
       })
       .then(res => {
-        // console.log(res);
+        console.log(res);
       });
   },
   methods: {}
