@@ -8,7 +8,7 @@ module.exports = {
       args[0].title= "vue-cli"
       return args
     })
-    config.resolve.alias.set('@', resolve('src'))
+    config.resolve.alias.set('@', resolve('./src'))
     // config.module.rule('images').uses.clear()
     // config.module.rule('images').use('file-loader').loader('file-loader').options({esModule: false,})
   },
