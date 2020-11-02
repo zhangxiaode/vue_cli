@@ -9,7 +9,7 @@ class Ajax {
       'X-Requested-With': 'XMLHttpRequest',
       'Accept': 'application/json',
       'Content-Type': 'application/json; charset=UTF-8',
-      'x-csrf-token': unescape(arr[2])
+      // 'x-csrf-token': unescape(arr[2])
     }
     Axios.defaults.baseURL = '';
     // 请求超时的时间限制
