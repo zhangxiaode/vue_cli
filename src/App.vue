@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import ajax from './utils/ajax'
+import { http } from './utils/ajax'
 // declare var videojs: any
 import videojs from 'video.js'
 import 'videojs-contrib-hls'
@@ -30,7 +30,7 @@ export default class App extends Vue {
     return "https://ip4214349946.mobgslb.tbcache.com/livecb.alicdn.com/mediaplatform/7482d876-165a-4ddc-bdca-2f922952bde6_liveng-720p.m3u8?auth_key=1606877694-0-0-5edf9a7ba6c60b02789db953ab6a68aa&ali_redirect_ex_hot=100&ali_redirect_ex_sm3u8=1"
     // return this.roomInfo.liveUrlHls
   }
-  mounted() {
+  private getVideo() {
     this.$nextTick(() => {
       this.myPlayer = videojs(this.$refs.myVideo, { "poster": "", "controls": "true"}, function() {
         this.on('play', function() {
@@ -46,12 +46,12 @@ export default class App extends Vue {
         })
       });
     })
-    // ajax
-    //   .post("/apis/post", {
-    //   })
-    //   .then(res => {
-    //     // console.log(res);
-    //   });
+  }
+  mounted() {
+    http.get("/apis/taoist", {})
+      .then(res => {
+        console.log(res);
+      });
   }
 }
 

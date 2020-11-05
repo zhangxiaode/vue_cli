@@ -5,7 +5,7 @@ import store from './store'
 import ajax from './utils/ajax'
 
 Vue.config.productionTip = false
-Vue.prototype.$ajax = ajax
+Vue.use(ajax)
  
 new Vue({
   router,

@@ -82,4 +82,17 @@ class Ajax {
     return this.handleMethod("delete", this.instance.delete, url, params)
   }
 }
-export default new Ajax()
+
+const install = function(Vue, opts = {}) {
+  Vue.prototype.$ajax = new Ajax()
+};
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue);
+}
+
+export const http = new Ajax()
+
+export default {
+  install
+};
